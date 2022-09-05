@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var binding: ActivityMainBinding
 
-    // Custom activity result contract
+/*    // Custom activity result contract
     private val launcher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 Log.d(TAG, "onActivityResult: Google SignIn intent Result")
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-        }
+        }*/
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+/*        val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
@@ -62,10 +62,10 @@ class MainActivity : AppCompatActivity() {
             //startActivityForResult(intent, RC_SIGN_IN)
             launcher.launch(intent)
         }
-        checkUser()
+        checkUser()*/
     }
 
-    private fun checkUser() {
+/*    private fun checkUser() {
 //check if user loggedin or not
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser != null) {
@@ -76,9 +76,9 @@ class MainActivity : AppCompatActivity() {
             this.finish()
             Log.d(TAG, "checkUser: user already logged in ${firebaseUser.email}")
         }
-    }
+    }*/
 
-    private fun firebaseAuthWithGoogleAccount(account: GoogleSignInAccount?) {
+/*    private fun firebaseAuthWithGoogleAccount(account: GoogleSignInAccount?) {
         Log.d(TAG, "firebaseAuthWithGoogleAccount: begin firebase auth with google account")
 
         val credentials = GoogleAuthProvider.getCredential(account!!.idToken, null)
@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
 
-    }
+    }*/
 
 
     companion object {
